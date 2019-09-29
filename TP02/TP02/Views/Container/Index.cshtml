@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Containeres</title>
+</head>
+<body>
+    <h1>Lista de Containeres</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id: </th>
+                <th>Numero: </th>
+                <th>Tipo: </th>
+                <th>Tamanho: </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cont in ViewBag.Containeres)
+            {
+            <tr>
+                <td>@cont.Id</td>
+                <td>@cont.Numero</td>
+                <td>@cont.Tipo</td>
+                <td>@cont.Tamanho</td>
+                <td><input type="submit" value="Alterar" formaction="/Container/Altera" /></td>
+                <td><input type="submit" value="Excluir" formaction="/Container/Exclui" /></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
+

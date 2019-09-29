@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Form";
+}
+
+<html>
+<head>
+
+</head>
+<body>
+
+    <form action="/Container/Adiciona" method="POST">
+        <label for="numero">Numero do Conteiner: </label>
+        <input id="numero" name="container.Numero" />
+
+        <label for="tipo">Tipo do container: </label>
+        <input id="tipo" name="container.Tipo" />
+
+        <label for="tamanho">Tamanho do container: </label>
+        <input id="tamanho" name="container.Tamanho" />
+
+        <label for="blid">Número do BL: </label>
+        <select id="blid" name="container.BlId">
+
+            @foreach(var bl in ViewBag.BL)
+            {
+                <option value="@bl.Id">@bl.Numero</option>
+            }
+
+        </select>
+
+        <input type="submit" />
+    </form>
+
+</body>
+</html>
+

@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Bill of Ladding</title>
+</head>
+<body>
+    <h1>Lista de BL</h1>
+
+    <form method="POST">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id: </th>
+                    <th>BL: </th>
+                    <th>Consignee: </th>
+                    <th>Navio: </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var BL in ViewBag.BL)
+                {
+                    <tr>
+                        <td>@BL.Id</td>
+                        <td>@BL.Numero</td>
+                        <td>@BL.Consignee</td>
+                        <td>@BL.Navio</td>
+                        <td><input type="submit" value="Alterar" formaction="/BL/Altera"/></td>
+                        <td><input type="submit" value="Excluir" formaction="/BL/Exclui"/></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Form";
+}
+
+<html>
+<head>
+
+</head>
+<body>
+
+    <form action="/BL/Adiciona" method="POST">
+        <label for="numero">Número do BL: </label>
+        <input id="numero" name="bl.Numero" />
+
+        <label for="consignee">Nome do Consignee: </label>
+        <input id="consignee" name="bl.Consignee" />
+
+        <label for="navio">Nome do navio: </label>
+        <input id="navio" name="bl.Navio" />
+
+        <input type="submit" />
+    </form>
+
+</body>
+</html>
