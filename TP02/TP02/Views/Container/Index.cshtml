@@ -1,6 +1,7 @@
-﻿
+﻿@model IList<TP02.Models.Container>
+
 @{
-    ViewBag.Title = "Index";
+    Layout = null;
 }
 
 <!DOCTYPE html>
@@ -22,16 +23,17 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var cont in ViewBag.Containeres)
+            @foreach (var Container in Model)
             {
-            <tr>
-                <td>@cont.Id</td>
-                <td>@cont.Numero</td>
-                <td>@cont.Tipo</td>
-                <td>@cont.Tamanho</td>
-                <td><input type="submit" value="Alterar" formaction="/Container/Altera" /></td>
-                <td><input type="submit" value="Excluir" formaction="/Container/Exclui" /></td>
-            </tr>
+                <tr>
+                    <td>@Container.Id</td>
+                    <td>@Container.Numero</td>
+                    <td>@Container.Tipo</td>
+                    <td>@Container.Tamanho</td>
+                    <td>
+                        @Html.ActionLink("Detalhes", "Detalhes", new { id = Container.Id })
+                    </td>
+                </tr>
             }
         </tbody>
     </table>

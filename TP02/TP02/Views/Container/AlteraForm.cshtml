@@ -1,0 +1,35 @@
+﻿@model TP02.Models.Container
+
+<html>
+<head>
+
+</head>
+<body>
+
+    <form action="/Container/Altera" method="POST">
+        <label for="Id">Identificador: </label>
+        <input id="Id" name="container.Id" value="@Model.Id" readonly="readonly" />
+
+        <label for="numero">Número do Contêiner: </label>
+        <input id="numero" name="container.Numero" value="@Model.Numero" />
+
+        <label for="tamanho">Tamanho: </label>
+        <input id="tamanho" name="container.Tamanho" value="@Model.Tamanho" />
+
+        <label for="tipo">Tipo: </label>
+        <input id="tipo" name="container.Tipo" value="@Model.Tipo" />
+
+        <select id="blid" name="container.BlId">
+
+            @foreach (var bl in ViewBag.BL)
+            {
+                <option value="@bl.Id">@bl.Numero</option>
+            }
+
+        </select>
+
+        <input type="submit" />
+    </form>
+
+</body>
+</html>

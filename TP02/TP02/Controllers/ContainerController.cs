@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -15,8 +16,7 @@ namespace TP02.Controllers
         {
             ConteinerDAO dao = new ConteinerDAO();
             IList<Container> containeres = dao.Lista();
-            ViewBag.Containeres = containeres;
-            return View();
+            return View(containeres);
         }
 
         public ActionResult Form()
@@ -47,5 +47,50 @@ namespace TP02.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Detalhes(int id)
+        {
+            ConteinerDAO daoContainer = new ConteinerDAO();
+            BLDAO daoBL = new BLDAO();
+            Container cont = daoContainer.BuscaPorId(id);
+            IList<BL> bls = daoBL.Lista();
+            ViewBag.BL = bls;
+
+            return View(cont);
+        }
+
+        public ActionResult AlteraForm(int id)
+        {
+            ConteinerDAO dao = new ConteinerDAO();
+            Container container = dao.BuscaPorId(id);
+            BLDAO daoBL = new BLDAO();
+            IList<BL> bls = daoBL.Lista();
+            ViewBag.BL = bls;
+
+            return View(container);
+        }
+
+        public ActionResult Altera(Container container)
+        {
+            ConteinerDAO dao = new ConteinerDAO();
+            dao.Atualiza(container);
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Exclui(int id)
+        {
+            ConteinerDAO dao = new ConteinerDAO();
+            int newid = id;
+            try
+            {
+                dao.Exclui(id);
+
+                return RedirectToAction("Index");
+            }
+            catch (DbUpdateException e)
+            {
+                return RedirectToAction("Index");
+            }
+        }
     }
 }

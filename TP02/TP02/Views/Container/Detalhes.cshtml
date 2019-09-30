@@ -1,0 +1,26 @@
+﻿@model TP02.Models.Container
+@Html.ValidationSummary()
+
+<html>
+<head>
+
+</head>
+<body>
+    @Model.Id <br/>
+    @Model.Numero <br/>
+    @Model.Tipo <br/>
+    @Model.Tamanho <br/>
+    @foreach(var bl in ViewBag.BL)
+    {
+        if(bl.Id == Model.BlId)
+        {
+            @bl.Numero <br/>;
+            continue;
+        }
+    }
+
+    @Html.ActionLink("Voltar", "Index")
+    @Html.ActionLink("Excluir Contêiner", "Exclui", new { id = Model.Id })
+    @Html.ActionLink("Editar Contêiner", "AlteraForm", new { id = Model.Id })
+</body>
+</html>

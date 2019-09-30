@@ -42,10 +42,11 @@ namespace TP02.DAO
             }
         }
 
-        public void Exclui(Container container)
+        public void Exclui(int id)
         {
             using (var context = new ListagemContext())
             {
+                Container container = context.Containeres.Include("BL").Where(p => p.Id == id).FirstOrDefault();
                 context.Containeres.Remove(container);
                 context.SaveChanges();
             }
