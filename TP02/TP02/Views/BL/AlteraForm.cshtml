@@ -1,0 +1,27 @@
+﻿@model TP02.Models.BL
+
+<html>
+<head>
+
+</head>
+<body>
+
+    <form action="/BL/Altera" method="POST">
+        <label for="Id">Identificador: </label>
+        <input id="Id" name="bl.Id" value="@Model.Id" readonly="readonly"/>
+
+        <label for="numero">Número do BL: </label>
+        <input id="numero" name="bl.Numero" value="@Model.Numero" />
+
+        <label for="consignee">Nome do Consignee: </label>
+        <input id="consignee" name="bl.Consignee" value="@Model.Consignee" />
+
+        <label for="navio">Nome do navio: </label>
+        <input id="navio" name="bl.Navio" value="@Model.Navio" />
+
+        <input type="submit" />
+    </form>
+
+</body>
+</html>
+

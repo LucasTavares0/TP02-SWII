@@ -1,0 +1,19 @@
+﻿@model TP02.Models.BL
+@Html.ValidationSummary()
+
+<html>
+<head>
+
+</head>
+<body>
+    @Model.Id<br>
+    @Model.Numero<br>
+    @Model.Consignee<br>
+    @Model.Navio<br>
+
+    @Html.ActionLink("Voltar", "Index")
+    @Html.ActionLink("Excluir BL", "Exclui", new { id = Model.Id })
+    @Html.ActionLink("Editar BL", "AlteraForm", new { id = Model.Id })
+</body>
+</html>
+

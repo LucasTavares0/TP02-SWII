@@ -1,8 +1,14 @@
-﻿
+﻿@Html.ValidationSummary()
+
 @{
     ViewBag.Title = "Index";
 }
 
+@model IList<TP02.Models.BL>
+
+@{
+    Layout = null;
+}
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,15 +29,16 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var BL in ViewBag.BL)
+                @foreach (var BL in Model)
                 {
                     <tr>
                         <td>@BL.Id</td>
                         <td>@BL.Numero</td>
                         <td>@BL.Consignee</td>
                         <td>@BL.Navio</td>
-                        <td><input type="submit" value="Alterar" formaction="/BL/Altera"/></td>
-                        <td><input type="submit" value="Excluir" formaction="/BL/Exclui"/></td>
+                        <td>
+                            @Html.ActionLink("Detalhes", "Detalhes", new { id = BL.Id })
+                        </td>
                     </tr>
                 }
             </tbody>

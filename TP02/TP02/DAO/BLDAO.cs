@@ -42,11 +42,12 @@ namespace TP02.DAO
             }
         }
 
-        public void Exclui(BL bl)
+        public void Exclui(int id)
         {
             using (var context = new ListagemContext())
             {
-                context.Bls.Remove(bl);
+                BL blDeletado = context.Bls.Where(p => p.Id == id).FirstOrDefault();
+                context.Bls.Remove(blDeletado);
                 context.SaveChanges();
             }
         }

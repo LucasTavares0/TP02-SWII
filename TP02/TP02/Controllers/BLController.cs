@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -15,8 +16,7 @@ namespace TP02.Controllers
         {
             BLDAO dao = new BLDAO();
             IList<BL> bls = dao.Lista();
-            ViewBag.BL = bls;
-            return View();
+            return View(bls);
         }
 
         public ActionResult Form()
@@ -31,6 +31,47 @@ namespace TP02.Controllers
             dao.Adiciona(bl);
 
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Detalhes(int id)
+        {
+            BLDAO dao = new BLDAO();
+            BL bl = dao.BuscaPorId(id);
+
+            return View(bl);
+        }
+
+        public ActionResult AlteraForm(int id)
+        {
+            BLDAO dao = new BLDAO();
+            BL bl = dao.BuscaPorId(id);
+
+            return View(bl);
+        }
+
+        public ActionResult Altera(BL bl)
+        {
+            BLDAO dao = new BLDAO();
+            dao.Atualiza(bl);
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Exclui(int id)
+        {
+            BLDAO dao = new BLDAO();
+            int newid = id;
+            try
+            {
+                dao.Exclui(id);
+
+                return RedirectToAction("Index");
+            }
+            catch(DbUpdateException e)
+            {
+                return RedirectToAction("Index");
+            }
+            
         }
     }
 }
