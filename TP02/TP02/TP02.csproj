@@ -133,7 +133,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\BL\Form.cshtml" />
     <Content Include="Views\Container\Form.cshtml" />
-    <Content Include="Views\Container\Relatorio.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -164,6 +163,7 @@
     <Content Include="Views\BL\AlteraForm.cshtml" />
     <Content Include="Views\Container\Detalhes.cshtml" />
     <Content Include="Views\Container\AlteraForm.cshtml" />
+    <Content Include="Views\BL\Relatorio.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

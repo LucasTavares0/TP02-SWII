@@ -67,11 +67,22 @@ namespace TP02.Controllers
 
                 return RedirectToAction("Index");
             }
-            catch(DbUpdateException e)
+            catch (DbUpdateException e)
             {
                 return RedirectToAction("Index");
             }
-            
+        }
+
+        public ActionResult Relatorio()
+        {
+            BLDAO bldao = new BLDAO();
+            ConteinerDAO contdao = new ConteinerDAO();
+            IList<BL> bls = bldao.Lista();
+            IList<Container> containeres = contdao.Lista();
+            ViewBag.BL = bls;
+            ViewBag.Container = containeres;
+
+            return View(bls);
         }
     }
 }

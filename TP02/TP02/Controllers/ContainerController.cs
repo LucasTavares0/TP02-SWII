@@ -27,17 +27,6 @@ namespace TP02.Controllers
             return View();
         }
 
-        public ActionResult Relatorio()
-        {
-            ConteinerDAO daoContainer = new ConteinerDAO();
-            IList<Container> containeres = daoContainer.Lista();
-            ViewBag.Containeres = containeres;
-            BLDAO daoBL = new BLDAO();
-            IList<BL> bls = daoBL.Lista();
-            ViewBag.BL = bls;
-            return View();
-        }
-
         [HttpPost]
         public ActionResult Adiciona(Container container)
         {
