@@ -6,14 +6,18 @@
 
 </head>
 <body>
-    @Model.Id<br>
-    @Model.Numero<br>
-    @Model.Consignee<br>
-    @Model.Navio<br>
+    <div>
+        <p>
+            @Model.Id<br>
+            @Model.Numero<br>
+            @Model.Consignee<br>
+            @Model.Navio<br>
 
-    @Html.ActionLink("Voltar", "Index")
-    @Html.ActionLink("Excluir BL", "Exclui", new { id = Model.Id })
-    @Html.ActionLink("Editar BL", "AlteraForm", new { id = Model.Id })
+            @Html.ActionLink("Voltar", "Index")
+            @Html.ActionLink("Excluir BL", "Exclui", new { id = Model.Id })
+            @Html.ActionLink("Editar BL", "AlteraForm", new { id = Model.Id })
+        </p>
+    </div>
 </body>
 </html>
 

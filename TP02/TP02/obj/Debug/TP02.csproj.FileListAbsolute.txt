@@ -168,3 +168,4 @@ C:\Users\Administrator\Downloads\Faculdade\ADS671\Material - Sistemas WEB II\TP0
 C:\Users\Administrator\Downloads\Faculdade\ADS671\Material - Sistemas WEB II\TP02-SWII\TP02\TP02\obj\Debug\TP02.csproj.CopyComplete
 C:\Users\Administrator\Downloads\Faculdade\ADS671\Material - Sistemas WEB II\TP02-SWII\TP02\TP02\obj\Debug\TP02.dll
 C:\Users\Administrator\Downloads\Faculdade\ADS671\Material - Sistemas WEB II\TP02-SWII\TP02\TP02\obj\Debug\TP02.pdb
+C:\Users\Administrator\Downloads\Faculdade\ADS671\Material - Sistemas WEB II\TP02-SWII\TP02\TP02\obj\Debug\TP02.csprojAssemblyReference.cache

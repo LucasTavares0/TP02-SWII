@@ -10,15 +10,32 @@
     @Scripts.Render("~/Scripts/modernizr-2-6-2.js")
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row-fluid">
-            <div class="span3">
-                <div class="well sidebar-nav">
-                    <ul class="nav nav-list">
-
-                    </ul>
-                </div>
-            </div>
+    <header class="nav-header">
+        <div class="nav-list">
+            <form method="POST">
+                <table class="table-bordered" align="center">
+                    <tr>
+                        <th>
+                            <input type="submit" value="Página Inicial" formaction="http://localhost:51886/" />
+                        </th>
+                        <th>
+                            <input type="submit" value="Incluir Container" formaction="http://localhost:51886/Container/Form" />
+                        </th>
+                        <th>
+                            <input type="submit" value="Incluir BL" formaction="http://localhost:51886/BL/Form" />
+                        </th>
+                        <th>
+                            <input type="submit" value="Listar Containeres" formaction="http://localhost:51886/Container/Index" />
+                        </th>
+                        <th>
+                            <input type="submit" value="Listar BLs" formaction="http://localhost:51886/BL/Index" />
+                        </th>
+                        <th>
+                            <input type="submit" value="Relatório" formaction="http://localhost:51886/BL/Relatorio" />
+                        </th>
+                    </tr>
+                </table>
+            </form>
             <div class="span9">
                 @RenderSection("featured", required: false)
                 <div class="row-fluid">
@@ -26,8 +43,19 @@
                 </div>
             </div>
         </div>
+    </header>
+    <div class="container-fluid">
     </div>
+        
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrapjs")
+
+    <footer class="modal-footer">
+        <div class="form-horizontal">
+            <p class="modal-footer">
+                Sistemas WEB II - Prof. Tuler Moraes
+            </p>
+        </div>
+    </footer>
 </body>
 </html>
