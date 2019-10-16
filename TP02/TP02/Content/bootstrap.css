@@ -242,9 +242,10 @@ a:focus {
 }
 
 .img-rounded {
-  -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-          border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    align-content: center;
 }
 
 .img-polaroid {
@@ -5194,6 +5195,18 @@ input[type="submit"].btn.btn-mini {
 .modal-backdrop.fade.in {
   opacity: 0.8;
   filter: alpha(opacity=80);
+}
+
+.bg 
+    {
+        /* The image used */
+        background-image: url("/Content/Images/terminal.jpg");
+        /* Full height */
+        height: 100%;
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
 }
 
 .modal {
